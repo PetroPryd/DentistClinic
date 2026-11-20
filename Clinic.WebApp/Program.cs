@@ -1,7 +1,10 @@
+using Clinic.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddClinicDatabase(builder.Configuration.GetConnectionString("ClinicDb"));
 
 var app = builder.Build();
 
